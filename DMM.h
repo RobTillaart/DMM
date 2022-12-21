@@ -37,7 +37,7 @@ public:
 
 
 private:
-  uint8_t  _pin         = A0;
+  uint8_t  _pin         = 14;  //  A0;
   float    _maxVoltage  = 5.0;
   uint16_t _maxSteps    = 1023;
   float    _voltageStep = _maxVoltage/_maxSteps;
