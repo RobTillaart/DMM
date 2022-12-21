@@ -23,6 +23,12 @@
 #include <ArduinoUnitTests.h>
 
 #include "Arduino.h"
+
+#ifndef A0
+#define A0  14
+#endif
+
+
 #include "DMM.h"
 
 
