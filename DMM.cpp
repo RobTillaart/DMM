@@ -113,7 +113,7 @@ uint32_t DMM::readOhm(uint8_t times)
 {
   float voltage = readVolts(times);
   
-  uint32_t R = round((_maxVoltage - voltage) * _ReferenceR) / voltage);
+  uint32_t R = round((_maxVoltage - voltage) * _ReferenceR / voltage);
   return R;
 }
 
