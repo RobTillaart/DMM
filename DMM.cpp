@@ -105,7 +105,7 @@ float DMM::readNoise(uint8_t times)
 //
 void DMM::setReferenceR(uint32_t ohm)
 {
-  uint32_t _ReferenceR = ohm;
+  _ReferenceR = ohm;
 }
 
 
