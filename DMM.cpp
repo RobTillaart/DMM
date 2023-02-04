@@ -103,24 +103,25 @@ float DMM::readNoise(uint8_t times)
 //
 //  READ OHM
 //
-void DMM::setReferenceR(uint32_t ohm)
+void DMM::setReferenceR(float ohm)
 {
   _ReferenceR = ohm;
 }
 
 
-uint32_t DMM::readOhm(uint8_t times)
+float DMM::readOhm(uint8_t times)
 {
   float voltage = readVolts(times);
   
-  uint32_t R = round((_maxVoltage - voltage) * _ReferenceR / voltage);
+  float R = _ReferenceR / voltage * _maxVoltage - _ReferenceR;
+  // float R = (_maxVoltage - voltage) * _ReferenceR / voltage;
   return R;
 }
 
 
-uint32_t DMM::readKiloOhm(uint8_t times)
+float DMM::readKiloOhm(uint8_t times)
 {
-  return readOhm(times) / 1000;
+  return readOhm(times) * 0.001;
 }
 
 

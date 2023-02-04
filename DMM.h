@@ -39,9 +39,9 @@ public:
 
 
   //  READ OHM
-  void     setReferenceR(uint32_t ohm);
-  uint32_t readOhm(uint8_t times = 1);
-  uint32_t readKiloOhm(uint8_t times = 1); 
+  void  setReferenceR(float ohm);
+  float readOhm(uint8_t times = 1);
+  float readKiloOhm(uint8_t times = 1); 
 
 
 private:
@@ -52,7 +52,7 @@ private:
 
   float    _gain        = 1.0;
   
-  uint32_t _ReferenceR  = 0;
+  float    _ReferenceR  = 0;
 };
 
 

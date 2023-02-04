@@ -20,7 +20,8 @@ The first version only works as a voltmeter, DC only.
 It is meant to be extended in the future to be a complete Digital MultiMeter class.
 that includes amps ohms, diode testing etc.
 
-(this is an old 'toy' project, wrapped into a class)
+This is an old 'toy' project, wrapped into a class. 
+Do not expect high precision or accuracy.
 
 
 #### Related
@@ -41,6 +42,7 @@ that includes amps ohms, diode testing etc.
 #### Configuration
 
 - **begin(uint8_t analogPin, float volts = 5.0, uint16_t maxADC = 1023)** configuration.
+Note these are the specifications of the ADC used. 
 - **void  setMaxVoltage(float maxVoltage)**
 - **float getMaxVoltage()**
 - **void  setGain(float factor = 1.0)** GAIN e.g. due to voltage divider.
@@ -86,6 +88,7 @@ Times can be set to average multiple measurements.
 - **uint32_t readKiloOhm(uint8_t times = 1)** read ohm.
 Times can be set to average multiple measurements.
 
+Character ohm = Ω  (ALT-234 or ALT-0216 might work)
 
 
 #### Calibration
@@ -95,8 +98,8 @@ Times can be set to average multiple measurements.
 
 ## Operation
 
-Basic operation is to connect the Arduino GND to the projects GND (or -)
-and use the configured analog pin to measure (positive) voltage.
+Basic operation is to connect the Arduino GND to the projects GND (or - )
+and use the configured analog pin to measure a (positive) voltage.
 
 By adding a voltage divider one can measure larger voltages.
 The divider factor can be set with **setGain(factor)**.
@@ -125,6 +128,9 @@ To elaborate.
 - update examples
 - add use of AREF
   - external or internal 1.1 Volt
+- **float setOffset(float offset)** adjust the voltage used.
+  - this is not the voltage the ADC uses internally.
+
 
 #### Should
 
