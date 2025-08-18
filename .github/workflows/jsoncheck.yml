@@ -1,8 +1,12 @@
 name: JSON check
 
-on: [push, pull_request]
-  paths:
-    - '**.json'
+on:
+  push:
+    paths:
+      - '**.json'
+  pull_request:
+    paths:
+      - '**.json'
 
 jobs:
   test:
